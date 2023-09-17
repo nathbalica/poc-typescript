@@ -11,6 +11,7 @@ app.use(json());
 app.use(router);
 app.use(errorHandler);
 
-app.listen(5000, () => {
-  console.log("`Servidor rodando na porta 5000`");
-});
+const port = process.env.PORT || 5000
+app.listen(port, () => {
+	console.log(`Servidor rodando na porta ${port}`)
+})
