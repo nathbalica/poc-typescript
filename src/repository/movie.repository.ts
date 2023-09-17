@@ -40,6 +40,14 @@ const movieRepository: MovieRepository = {
     );
     return result.rows;
   },
+  findMovieByName: async (name: string) => {
+    const result = await connection.query("SELECT * FROM movies WHERE name=$1", [name]);
+    return result.rows[0] || null;
+  },
+  findMovieById: async (id: number) => {
+    const result = await connection.query("SELECT * FROM movies WHERE id=$1", [id]);
+    return result.rows[0] || null;
+  },
 };
 
 export default movieRepository;
