@@ -1,4 +1,4 @@
-import { connection } from "@/database/db";
+import connection  from "@/database/db";
 import { Movie, MovieRepository } from "@/protocols/movie.protocol";
 
 const movieRepository: MovieRepository = {
