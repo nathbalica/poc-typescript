@@ -75,6 +75,11 @@ const countMoviesByGenre = async (): Promise<
   return await movieRepository.countMoviesByGenre();
 };
 
+const listMoviesByGenre = async (genre: string): Promise<Movie[]> => {
+  return await movieRepository.listMoviesByGenre(genre);
+};
+
+
 const movieServices = {
   listMovies,
   addMovie,
@@ -82,6 +87,7 @@ const movieServices = {
   deleteMovie,
   countMoviesByGenre,
   countMoviesByPlatform,
+  listMoviesByGenre
 };
 
 

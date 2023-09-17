@@ -48,6 +48,10 @@ const movieRepository: MovieRepository = {
     const result = await connection.query("SELECT * FROM movies WHERE id=$1", [id]);
     return result.rows[0] || null;
   },
+  listMoviesByGenre: async (genre: string) => {
+    const result = await connection.query("SELECT * FROM movies WHERE genre=$1", [genre]);
+    return result.rows as Movie[];
+  },
 };
 
 export default movieRepository;

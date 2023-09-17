@@ -16,7 +16,8 @@ export type MovieRepository = {
     countMoviesByPlatform: () => Promise<{ platform: string, count: number }[]>;
     countMoviesByGenre: () => Promise<{ genre: string, count: number }[]>;
     findMovieByName: (name: string) => Promise<Movie | null>;
-    findMovieById: (id: number) => Promise<Movie | null>
+    findMovieById: (id: number) => Promise<Movie | null>;
+    listMoviesByGenre: (genre: string) => Promise<Movie[]>;
 }
 
 
